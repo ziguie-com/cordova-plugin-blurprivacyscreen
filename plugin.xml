@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-blurprivacyscreen" version="0.0.1">
+
+  <name>BlurPrivacyScreenPlugin</name>
+  <description>Hide screen in task switchers under Android and iOS.</description>
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version=">=4.0.0" />
+  </engines>
+
+  <js-module name="PrivacyScreenPlugin" src="www/PrivacyScreenPlugin.js">
+    <clobbers target="PrivacyScreen" />
+  </js-module>
+
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="PrivacyScreenPlugin">
+        <param name="android-package" value="com.ziguie.privacyscreen.PrivacyScreenPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/PrivacyScreenPlugin.java" target-dir="src/com/ziguie/privacyscreen"/>
+  </platform>
+
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="PrivacyScreenPlugin">
+        <param name="ios-package" value="PrivacyScreenPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/PrivacyScreenPlugin.h"/>
+    <source-file src="src/ios/PrivacyScreenPlugin.m"/>
+  </platform>
+</plugin>

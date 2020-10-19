@@ -1,0 +1,18 @@
+{
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-blurprivacyscreen",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Hide screen in task switchers under Android and iOS.",
+  "name": "cordova-plugin-blurprivacyscreen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziguie-com/BlurPrivacyScreenPlugin.git"
+  },
+  "version": "0.0.1"
+}
